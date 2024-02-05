@@ -1,4 +1,14 @@
 version: '3'
 services:
   my-service:
-    image: my-image
+    image: my-python-app
+    ports:
+      - "8080:5000"
+    environment:
+      - BACKEND_ENV=production
+   my-frontend:
+    image: my-front-image
+    ports:
+      - "80:80"
+    environment:
+      - FRONTEND_ENV=development
